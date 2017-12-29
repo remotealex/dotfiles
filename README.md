@@ -16,3 +16,9 @@ Then remove the git dir
 ```
 $ rm -rf ~/.git
 ```
+
+Install the Vim plugins:
+
+```
+:VundleInstall
+```
