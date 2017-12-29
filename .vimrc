@@ -5,6 +5,18 @@ color dracula
 " Make Vim more useful
 set nocompatible
 
+" Vundle config and plugins
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'ternjs/tern_for_vim'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'scrooloose/nerdtree'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'w0rp/ale'
+call vundle#end()
+
 " Setup netrw to act like NERDTree
 let g:netrw_banner = 0
 let g:netrw_liststyle = 3
@@ -88,15 +100,12 @@ filetype plugin indent on
 " Automatic commands
 if has("autocmd")
 	" Enable file type detection
-	filetype on
+	" filetype on
 	" Treat .json files as .js
 	autocmd BufNewFile,BufRead *.json setfiletype json syntax=javascript
 	" Treat .md files as Markdown
 	autocmd BufNewFile,BufRead *.md setlocal filetype=markdown
 endif
-
-" Add pathogen
-execute pathogen#infect()
 
 " NERDTree config
 autocmd vimenter * NERDTree
@@ -105,3 +114,9 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 let NERDTreeIgnore = ['\.pyc$']
 map <C-n> :NERDTreeToggle<CR>
 autocmd BufNew * wincmd l
+
+" YouCompleteMe + tern additions
+" enable keyboard shortcuts
+let g:tern_map_keys=1
+" show argument hints
+let g:tern_show_argument_hints='on_hold'

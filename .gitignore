@@ -15,3 +15,5 @@ Thumbs.db
 
 # Vim files
 .netrwhist
+*.swp
+.vim/bundle/*
