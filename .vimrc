@@ -49,13 +49,6 @@ set number
 set cursorline
 " Make tabs as wide as two spaces
 set tabstop=2
-" Show “invisible” characters
-" set lcs=tab:▸\ ,trail:·,eol:¬,nbsp:_
-" set list
-" Highlight searches
-set hlsearch
-" Highlight dynamically as pattern is typed
-set incsearch
 " Always show status line
 set laststatus=2
 " Enable mouse in all modes
@@ -79,8 +72,18 @@ if exists("&relativenumber")
 	set relativenumber
 	au BufReadPost * set relativenumber
 endif
-" Start scrolling three lines before the horizontal window border
-set scrolloff=3
+" Start scrolling five lines before the horizontal window border
+set scrolloff=5
+
+" Find out what all of these do
+set autoindent
+set colorcolumn=80
+set expandtab
+set shiftwidth=4
+set smarttab
+set softtabstop=4
+filetype plugin indent on
+" End find
 
 " Automatic commands
 if has("autocmd")
@@ -94,3 +97,11 @@ endif
 
 " Add pathogen
 execute pathogen#infect()
+
+" NERDTree config
+autocmd vimenter * NERDTree
+autocmd VimEnter * wincmd p
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+let NERDTreeIgnore = ['\.pyc$']
+map <C-n> :NERDTreeToggle<CR>
+autocmd BufNew * wincmd l
