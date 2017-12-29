@@ -10,3 +10,9 @@ Once cloned, symlink all of the files to your home dir.
 ```
 $ ln -s ~/projects/dotfiles/.* ~/
 ```
+
+Then remove the git dir
+
+```
+$ rm -rf ~/.git
+```
