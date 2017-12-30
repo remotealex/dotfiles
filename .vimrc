@@ -16,6 +16,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'w0rp/ale'
 Plugin 'tpope/vim-surround'
+Plugin 'vim-airline/vim-airline'
 call vundle#end()
 
 " Setup netrw to act like NERDTree
