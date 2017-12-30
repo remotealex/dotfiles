@@ -17,6 +17,9 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'w0rp/ale'
 Plugin 'tpope/vim-surround'
 Plugin 'vim-airline/vim-airline'
+Plugin 'ntpeters/vim-better-whitespace'
+Plugin 'editorconfig/editorconfig-vim'
+Plugin 'mileszs/ack.vim'
 call vundle#end()
 
 " Setup netrw to act like NERDTree
@@ -131,3 +134,10 @@ nnoremap <leader>g :YcmCompleter GoToReferences<CR>
 
 " ctrlp config
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
+let g:ctrlp_max_files=0
+let g:ctrlp_max_depth=40
+"
+" Ack config
+let g:ackprg = 'ag --nogroup --nocolor --column'
+cnoreabbrev Ack Ack!
+nnoremap <leader>a :Ack!<Space>
