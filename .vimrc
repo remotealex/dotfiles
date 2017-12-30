@@ -15,6 +15,7 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'scrooloose/nerdtree'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'w0rp/ale'
+Plugin 'tpope/vim-surround'
 call vundle#end()
 
 " Setup netrw to act like NERDTree
@@ -86,16 +87,19 @@ if exists("&relativenumber")
 endif
 " Start scrolling five lines before the horizontal window border
 set scrolloff=5
+" No sounds
+set visualbell
+" Reload files changed outside vim
+set autoread
 
-" Find out what all of these do
 set autoindent
 set colorcolumn=80
 set expandtab
 set shiftwidth=4
 set smarttab
 set softtabstop=4
+set smartcase
 filetype plugin indent on
-" End find
 
 " Automatic commands
 if has("autocmd")
@@ -120,3 +124,8 @@ autocmd BufNew * wincmd l
 let g:tern_map_keys=1
 " show argument hints
 let g:tern_show_argument_hints='on_hold'
+nnoremap <silent> gtd :YcmCompleter GoToDefinition <cword><CR>
+nnoremap <silent> gtt :YcmCompleter GoToReferences <cword><CR>
+
+" ctrlp config
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
