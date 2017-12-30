@@ -27,6 +27,8 @@ let g:netrw_winsize = 15
 
 " Use the OS clipboard by default
 set clipboard=unnamed
+" Change leader
+let mapleader=","
 " Enhance command-line completion
 set wildmenu
 " Allow cursor keys in insert mode
@@ -124,8 +126,7 @@ autocmd BufNew * wincmd l
 let g:tern_map_keys=1
 " show argument hints
 let g:tern_show_argument_hints='on_hold'
-nnoremap <silent> gtd :YcmCompleter GoToDefinition <cword><CR>
-nnoremap <silent> gtt :YcmCompleter GoToReferences <cword><CR>
+nnoremap <leader>g :YcmCompleter GoToReferences<CR>
 
 " ctrlp config
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
