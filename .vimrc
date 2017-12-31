@@ -95,6 +95,8 @@ endif
 set scrolloff=5
 " No sounds
 set visualbell
+" No error flash
+set t_vb=
 " Reload files changed outside vim
 set autoread
 
