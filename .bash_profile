@@ -69,3 +69,8 @@ alias gpu='git pull'
 alias gcl='git clone'
 alias gta='git tag -a -m'
 alias gf='git reflog'
+
+# Git command auto-completion
+if [ -f ~/.git-completion.bash ]; then
+  . ~/.git-completion.bash
+fi
