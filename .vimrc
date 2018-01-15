@@ -20,6 +20,8 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'mileszs/ack.vim'
+Plugin 'pangloss/vim-javascript'
+Plugin 'mxw/vim-jsx'
 call vundle#end()
 
 " Setup netrw to act like NERDTree
@@ -143,3 +145,7 @@ let g:ctrlp_max_depth=40
 let g:ackprg = 'ag --nogroup --nocolor --column'
 cnoreabbrev Ack Ack!
 nnoremap <leader>a :Ack!<Space>
+
+" JS & JSX config
+let g:javascript_plugin_jsdoc = 1
+let g:jsx_ext_required = 0
