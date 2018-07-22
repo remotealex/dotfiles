@@ -17,7 +17,13 @@ Then remove the git dir
 $ rm -rf ~/.git
 ```
 
-Install the Vim plugins:
+Manually install Vundle
+
+```
+$ git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+```
+
+Open `vim` and install the plugins:
 
 ```
 :VundleInstall
