@@ -28,3 +28,5 @@ Open `vim` and install the plugins:
 ```
 :VundleInstall
 ```
+
+Install homebrew from https://brew.sh
