@@ -149,3 +149,7 @@ nnoremap <leader>a :Ack!<Space>
 " JS & JSX config
 let g:javascript_plugin_jsdoc = 1
 let g:jsx_ext_required = 0
+
+" Silence the errors for imp module
+" https://github.com/Valloric/YouCompleteMe/issues/3062
+silent! py3 pass
