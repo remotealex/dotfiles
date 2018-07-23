@@ -30,3 +30,5 @@ Open `vim` and install the plugins:
 ```
 
 Install homebrew from https://brew.sh
+
+Install tmux `brew install tmux`
