@@ -32,3 +32,5 @@ Open `vim` and install the plugins:
 Install homebrew from https://brew.sh
 
 Install tmux `brew install tmux`
+
+Go to https://valloric.github.io/YouCompleteMe/#installation and follow the YCM install instructions (including installing macvim `brew install macvim`).
