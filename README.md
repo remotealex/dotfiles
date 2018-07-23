@@ -36,3 +36,5 @@ Install tmux `brew install tmux`
 Go to https://valloric.github.io/YouCompleteMe/#installation and follow the YCM install instructions (including installing macvim `brew install macvim`).
 
 Install the tern server by running `npm install` in the `~/.vim/bundle/tern_for_vim` directory.
+
+Install the silver searcher `brew install the_silver_searcher` (for searching in vim)
