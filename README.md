@@ -34,3 +34,5 @@ Install homebrew from https://brew.sh
 Install tmux `brew install tmux`
 
 Go to https://valloric.github.io/YouCompleteMe/#installation and follow the YCM install instructions (including installing macvim `brew install macvim`).
+
+Install the tern server by running `npm install` in the `bundle/tern_for_vim` directory.
