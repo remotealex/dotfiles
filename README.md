@@ -102,3 +102,5 @@ Remove outdated versions from the cellar.
 ```
 $ brew cleanup
 ```
+
+Sort out the MacOS defaults by running these: https://gist.github.com/alexpriceonline/156eef96494d66696cb13fb334ff4273
