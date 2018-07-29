@@ -5,6 +5,9 @@ color dracula
 " Make Vim more useful
 set nocompatible
 
+" Remove scroll bars from macvim
+set guioptions=
+
 " Vundle config and plugins
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
