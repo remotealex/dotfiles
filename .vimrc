@@ -153,3 +153,6 @@ let g:jsx_ext_required = 0
 " Silence the errors for imp module
 " https://github.com/Valloric/YouCompleteMe/issues/3062
 silent! py3 pass
+
+" Disable 'scratch' preview window
+set completeopt-=preview
