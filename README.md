@@ -89,6 +89,9 @@ Install other useful binaries
 $ brew install ssh-copy-id
 $ brew install tree
 $ brew install tmux
+$ brew install bat
+$ brew install fzf
+$ brew install diff-so-fancy
 ```
 
 Install macOS clipboard support
@@ -101,6 +104,26 @@ Remove outdated versions from the cellar.
 
 ```
 $ brew cleanup
+```
+
+Configure `git` to use `diff-so-fancy` and add some nice colours
+
+```
+$ git config --global core.pager "diff-so-fancy | less --tabs=4 -RFX"
+
+$ git config --global color.ui true
+
+$ git config --global color.diff-highlight.oldNormal    "red bold"
+$ git config --global color.diff-highlight.oldHighlight "red bold 52"
+$ git config --global color.diff-highlight.newNormal    "green bold"
+$ git config --global color.diff-highlight.newHighlight "green bold 22"
+
+$ git config --global color.diff.meta       "yellow"
+$ git config --global color.diff.frag       "magenta bold"
+$ git config --global color.diff.commit     "yellow bold"
+$ git config --global color.diff.old        "red bold"
+$ git config --global color.diff.new        "green bold"
+$ git config --global color.diff.whitespace "red reverse"
 ```
 
 Sort out the MacOS defaults by running these: https://gist.github.com/alexpriceonline/156eef96494d66696cb13fb334ff4273
