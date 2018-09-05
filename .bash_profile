@@ -70,3 +70,11 @@ alias gf='git reflog'
 if [ -f ~/.git-completion.bash ]; then
   . ~/.git-completion.bash
 fi
+
+# Upgraded cat
+alias cat='bat'
+
+# Upgraded cntl-r
+alias preview="fzf --preview 'bat --color \"always\" {}'"
+# Add support for ctrl+o to open selected file in VS Code
+export FZF_DEFAULT_OPTS="--bind='ctrl-o:execute(code {})+abort'"
