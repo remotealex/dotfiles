@@ -1,161 +1,110 @@
-" Use the Dracula theme
-syntax on
-color dracula
-
-" Make Vim more useful
+" Don't try to be vi compatible
 set nocompatible
 
-" Remove scroll bars from macvim
-set guioptions=
-
-" Vundle config and plugins
+" Helps force plugins to load correctly when it is turned back on below
 filetype off
+
+" set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
+
+" let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'ternjs/tern_for_vim'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'scrooloose/nerdtree'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'w0rp/ale'
-Plugin 'tpope/vim-surround'
-Plugin 'vim-airline/vim-airline'
-Plugin 'ntpeters/vim-better-whitespace'
-Plugin 'editorconfig/editorconfig-vim'
-Plugin 'mileszs/ack.vim'
-Plugin 'pangloss/vim-javascript'
-Plugin 'mxw/vim-jsx'
-call vundle#end()
 
-" Setup netrw to act like NERDTree
-let g:netrw_banner = 0
-let g:netrw_liststyle = 3
-let g:netrw_browse_split = 4
-let g:netrw_altv = 1
-let g:netrw_winsize = 15
+" for nice markdown support
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
 
-" Use the OS clipboard by default
-set clipboard=unnamed
-" Change leader
-let mapleader=","
-" Enhance command-line completion
-set wildmenu
-" Allow cursor keys in insert mode
-set esckeys
-" Allow backspace in insert mode
-set backspace=indent,eol,start
-" Add the g flag to search/replace by default
-set gdefault
-" Use UTF-8 without BOM
-set encoding=utf-8 nobomb
-" Don’t add empty newlines at the end of files
-set binary
-set noeol
-" Centralize backups, swapfiles and undo history
-set backupdir=~/.vim/backups
-set directory=~/.vim/swaps
-if exists("&undodir")
-  set undodir=~/.vim/undo
-endif
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
 
-" Don’t create backups when editing files in certain directories
-set backupskip=/tmp/*,/private/tmp/*
+" Turn on syntax highlighting
+syntax on
 
-" Respect modeline in files
-set modeline
-set modelines=4
-" Enable per-directory .vimrc files and disable unsafe commands in them
-set exrc
-set secure
-" Enable line numbers
-set number
-" Highlight current line
-set cursorline
-" Make tabs as wide as two spaces
-set tabstop=2
-" Always show status line
-set laststatus=2
-" Enable mouse in all modes
-set mouse=a
-" Disable error bells
-set noerrorbells
-" Don’t reset cursor to start of line when moving around.
-set nostartofline
-" Show the cursor position
-set ruler
-" Don’t show the intro message when starting Vim
-set shortmess=atI
-" Show the current mode
-set showmode
-" Show the filename in the window titlebar
-set title
-" Show the (partial) command as it’s being typed
-set showcmd
-" Use relative line numbers
-if exists("&relativenumber")
-	set relativenumber
-	au BufReadPost * set relativenumber
-endif
-" Start scrolling five lines before the horizontal window border
-set scrolloff=5
-" No sounds
-set visualbell
-" No error flash
-set t_vb=
-" Reload files changed outside vim
-set autoread
-
-set autoindent
-set colorcolumn=80
-set expandtab
-set shiftwidth=4
-set smarttab
-set softtabstop=4
-set smartcase
+" For plugins to load correctly
 filetype plugin indent on
 
-" Automatic commands
-if has("autocmd")
-	" Enable file type detection
-	" filetype on
-	" Treat .json files as .js
-	autocmd BufNewFile,BufRead *.json setfiletype json syntax=javascript
-	" Treat .md files as Markdown
-	autocmd BufNewFile,BufRead *.md setlocal filetype=markdown
-endif
+" TODO: Pick a leader key
+" let mapleader = ","
 
-" NERDTree config
-autocmd vimenter * NERDTree
-autocmd VimEnter * wincmd p
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-let NERDTreeIgnore = ['\.pyc$']
-map <C-n> :NERDTreeToggle<CR>
-autocmd BufNew * wincmd l
+" Security
+set modelines=0
 
-" YouCompleteMe + tern additions
-" enable keyboard shortcuts
-let g:tern_map_keys=1
-" show argument hints
-let g:tern_show_argument_hints='on_hold'
-nnoremap <leader>g :YcmCompleter GoToReferences<CR>
+" Show line numbers
+set number
 
-" ctrlp config
-let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
-let g:ctrlp_max_files=0
-let g:ctrlp_max_depth=40
-"
-" Ack config
-let g:ackprg = 'ag --nogroup --nocolor --column'
-cnoreabbrev Ack Ack!
-nnoremap <leader>a :Ack!<Space>
+" Show file stats
+set ruler
 
-" JS & JSX config
-let g:javascript_plugin_jsdoc = 1
-let g:jsx_ext_required = 0
+" Blink cursor on error instead of beeping (grr)
+set visualbell
 
-" Silence the errors for imp module
-" https://github.com/Valloric/YouCompleteMe/issues/3062
-silent! py3 pass
+" Encoding
+set encoding=utf-8
 
-" Disable 'scratch' preview window
-set completeopt-=preview
+" Whitespace
+set wrap
+set textwidth=79
+set formatoptions=tcqrn1
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
+set expandtab
+set noshiftround
+
+" Cursor motion
+set scrolloff=3
+set backspace=indent,eol,start
+set matchpairs+=<:> " use % to jump between pairs
+runtime! macros/matchit.vim
+
+" Move up/down editor lines
+nnoremap j gj
+nnoremap k gk
+
+" Allow hidden buffers
+set hidden
+
+" Rendering
+set ttyfast
+
+" Status bar
+set laststatus=2
+
+" Last line
+set showmode
+set showcmd
+
+" Searching
+nnoremap / /\v
+vnoremap / /\v
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
+set showmatch
+map <leader><space> :let @/=''<cr> " clear search
+
+" Remap help key.
+inoremap <F1> <ESC>:set invfullscreen<CR>a
+nnoremap <F1> :set invfullscreen<CR>
+vnoremap <F1> :set invfullscreen<CR>
+
+" Textmate holdouts
+
+" Formatting
+map <leader>q gqip
+
+" Visualize tabs and newlines
+set listchars=tab:▸\ ,eol:¬
+" Uncomment this to enable by default:
+" set list " To enable by default
+" Or use your leader key + l to toggle on/off
+map <leader>l :set list!<CR> " Toggle tabs and EOL
+
+" Color scheme (terminal)
+set t_Co=256
+set background=dark
+
+" Stop vim flashes and sounds
+set vb t_vb=
