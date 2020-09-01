@@ -48,10 +48,10 @@ $ brew install bash-completion2
 $ chsh -s /usr/local/bin/bash
 ```
 
-Install `wget` with IRI support.
+Install `wget`.
 
 ```
-$ brew install wget --with-iri
+$ brew install wget
 ```
 
 Install GnuPG to enable PGP-signing commits.
