@@ -65,7 +65,6 @@ Install more recent versions of some macOS tools
 ```
 $ brew install grep
 $ brew install openssh
-$ brew install screen
 ```
 
 Install font tools
@@ -82,7 +81,6 @@ Install other useful binaries
 ```
 $ brew install ssh-copy-id
 $ brew install tree
-$ brew install tmux
 $ brew install bat
 $ brew install fzf
 $ brew install diff-so-fancy
@@ -120,4 +118,4 @@ $ git config --global color.diff.new        "green bold"
 $ git config --global color.diff.whitespace "red reverse"
 ```
 
-Sort out the MacOS defaults by running these: https://gist.github.com/alexpriceonline/156eef96494d66696cb13fb334ff4273
+Sort out the MacOS defaults by running these: https://gist.github.com/remotealex/156eef96494d66696cb13fb334ff4273
