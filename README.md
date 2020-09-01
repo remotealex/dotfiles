@@ -31,12 +31,6 @@ Open `vim` and install the plugins:
 
 Install homebrew from https://brew.sh
 
-Go to https://valloric.github.io/YouCompleteMe/#installation and follow the YCM install instructions (including installing macvim `brew install macvim`).
-
-Install the tern server by running `npm install` in the `~/.vim/bundle/tern_for_vim` directory.
-
-Install the silver searcher `brew install the_silver_searcher` (for searching in vim)
-
 Install GNU core utilities (those that come with macOS are outdated).
 Don’t forget to add `$(brew --prefix coreutils)/libexec/gnubin` to `$PATH`.
 
