@@ -84,3 +84,6 @@ export FZF_DEFAULT_OPTS="--bind='ctrl-o:execute(code {})+abort'"
 # Android development stuff
 export ANDROID_SDK=/Users/alexprice/Library/Android/sdk
 export PATH=/Users/alexprice/Library/Android/sdk/platform-tools:$PATH
+
+# Python3 stuff
+export PATH=/Users/alexprice/Library/Python/3.9/bin:$PATH
